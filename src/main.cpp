@@ -10,7 +10,7 @@ void setup()
   Serial.begin(115200);
   Serial.println("Starting Classic BT");
   SerialBT.begin(DEVICE_NAME, true);
-  Serial.println("Bluetooht Setup Complete");
+  Serial.println("Bluetooth Setup Complete");
 
   // SerialBT.register_callback([](esp_spp_cb_event_t event, esp_spp_cb_param_t *param) {
   //   switch (event)
@@ -38,7 +38,7 @@ void loop()
       SerialBT.write(Serial.read());
     }
   } else {
-    SerialBT.connect();
+    SerialBT.connect("ESP32-Adi");
   }
   delay(100);
 }
